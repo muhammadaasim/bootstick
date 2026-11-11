@@ -1,0 +1,25 @@
+<!-- Launcher foreground: the logo in brand teal, with the boot arrow in amber. 108dp canvas, logo inside the 66dp safe zone. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <group
+        android:scaleX="2.5"
+        android:scaleY="2.5"
+        android:translateX="24"
+        android:translateY="24">
+        <path
+            android:fillColor="#FF00BFA6"
+            android:fillType="evenOdd"
+            android:pathData="M8.5,1H15.5A2.5,2.5 0,0 1,18 3.5V14.5A2.5,2.5 0,0 1,15.5 17H8.5A2.5,2.5 0,0 1,6 14.5V3.5A2.5,2.5 0,0 1,8.5 1Z
+                M7.75,3.25H16.25V14H7.75Z
+                M10.75,17H13.25V19H10.75Z
+                M9,19H15A1,1 0,0 1,16 20V22A1,1 0,0 1,15 23H9A1,1 0,0 1,8 22V20A1,1 0,0 1,9 19Z
+                M10,20.25H11.25V21.5H10Z
+                M12.75,20.25H14V21.5H12.75Z" />
+        <path
+            android:fillColor="#FFFFB300"
+            android:pathData="M10.5,6L14.75,8.6L10.5,11.2Z" />
+    </group>
+</vector>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Long-press launcher shortcuts; MainActivity handles the actions. -->
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+    <shortcut
+        android:icon="@drawable/ic_bootstick"
+        android:shortcutId="mount_last"
+        android:shortcutLongLabel="@string/shortcut_mount_last_long"
+        android:shortcutShortLabel="@string/shortcut_mount_last">
+        <intent
+            android:action="dev.aasim.bootstick.MOUNT_LAST"
+            android:targetClass="dev.aasim.bootstick.MainActivity"
+            android:targetPackage="dev.aasim.bootstick" />
+    </shortcut>
+    <shortcut
+        android:icon="@drawable/ic_usb"
+        android:shortcutId="eject"
+        android:shortcutLongLabel="@string/shortcut_eject_long"
+        android:shortcutShortLabel="@string/shortcut_eject">
+        <intent
+            android:action="dev.aasim.bootstick.EJECT"
+            android:targetClass="dev.aasim.bootstick.MainActivity"
+            android:targetPackage="dev.aasim.bootstick" />
+    </shortcut>
+</shortcuts>

@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name" translatable="false">BootStick</string>
+
+    <!-- Tabs and shared -->
+    <string name="tab_drive">Drive</string>
+    <string name="tab_get">Get ISOs</string>
+    <string name="tab_tools">Tools</string>
+    <string name="about">About</string>
+    <string name="about_title">About BootStick</string>
+    <string name="back">Back</string>
+    <string name="error_title">Something went wrong</string>
+    <string name="err_no_su">BootStick wasn\'t given root. Allow it in your root manager, then try again.</string>
+    <string name="mount">Mount</string>
+    <string name="mounted">Mounted</string>
+    <string name="eject">Eject</string>
+    <string name="eject_all">Eject all</string>
+    <string name="ejected">Ejected</string>
+    <string name="reinsert">Re-insert</string>
+    <string name="remove">Remove</string>
+    <string name="copy">Copy</string>
+    <string name="share">Share</string>
+    <string name="stop">Stop</string>
+    <string name="pause">Pause</string>
+    <string name="resume">Resume</string>
+    <string name="retry">Retry</string>
+    <string name="clear">Clear</string>
+    <string name="all">All</string>
+    <string name="next">Next</string>
+    <string name="skip">Skip</string>
+    <string name="check">Check</string>
+    <string name="checking">Checking…</string>
+    <string name="check_again">Check again</string>
+    <string name="open_app">Open %1$s</string>
+    <string name="sd_card">SD card</string>
+    <string name="internal_storage">Internal storage</string>
+    <string name="x_of_y">%1$s of %2$s</string>
+    <string name="per_second">%1$s/s</string>
+
+    <!-- Modes -->
+    <string name="mode_disk">Writable USB disk</string>
+    <string name="mode_ro">Read-only USB disk</string>
+    <string name="mode_cdrom">CD-ROM</string>
+    <string name="mode_ro_hint">Boots most Linux ISOs, and the computer can\'t change the file.</string>
+    <string name="mode_cdrom_hint">For Windows ISOs and others that don\'t boot as a USB disk. Read-only.</string>
+    <string name="mode_disk_hint">The computer can write to it. Use for blank images and save disks.</string>
+
+    <!-- Image kinds -->
+    <string name="kind_hybrid">Bootable ISO</string>
+    <string name="kind_iso">CD/DVD ISO</string>
+    <string name="kind_disk">Disk image</string>
+    <string name="kind_blank">Blank image</string>
+    <string name="kind_compressed">Compressed image</string>
+    <string name="kind_other">Other image</string>
+    <string name="hint_hybrid">A hybrid ISO, like most Linux ISOs. It boots as a USB disk or as a CD.</string>
+    <string name="hint_iso">A plain CD/DVD image, like Windows ISOs. Mount it as a CD-ROM to boot it.</string>
+    <string name="hint_disk">A disk image with a partition table or filesystem, like a Raspberry Pi image or a formatted blank image.</string>
+    <string name="hint_blank">Empty so far. Mount it as a writable disk and format it from the computer.</string>
+    <string name="hint_compressed">An image packed as .xz, .gz or .zip. Unpack it to get the image inside, which can then be mounted.</string>
+    <string name="hint_other">Not a recognised disk or ISO. It may be phone firmware (boot.img and similar) or a filesystem image.</string>
+    <string name="bios_only">Legacy BIOS only</string>
+    <string name="bios_only_hint">Boots only on PCs with Legacy (CSM) boot. UEFI-only PCs, which is most made since 2020, won\'t list it in the boot menu, even with Secure Boot off.</string>
+
+    <!-- USB state -->
+    <string name="usb_computer">Connected to a computer</string>
+    <string name="usb_power">Plugged in, but no computer has set it up</string>
+    <string name="usb_none">Not plugged in</string>
+
+    <!-- Root -->
+    <string name="root_steps_ksunext">Open KernelSU Next, go to Superuser, find BootStick and switch it on.</string>
+    <string name="root_steps_kernelsu">Open KernelSU, go to Superuser, find BootStick and switch it on.</string>
+    <string name="root_steps_apatch">Open APatch, go to Superuser, find BootStick and switch it on.</string>
+    <string name="root_steps_magisk">Tap Check again and choose Grant when Magisk asks. If you denied it before, allow BootStick under Superuser in Magisk.</string>
+    <string name="root_steps_generic">Allow BootStick to use root in KernelSU, Magisk or APatch, then tap Check again.</string>
+    <string name="reason_no_mass_storage">Its kernel was built without USB mass storage (CONFIG_USB_CONFIGFS_MASS_STORAGE). A custom kernel with it switched on would fix this.</string>
+    <string name="reason_no_configfs">It has neither the configfs USB system nor the older android_usb one that BootStick needs. That usually means a heavily modified ROM.</string>
+    <string name="reason_other">The USB system couldn\'t be set up (%1$s). Diagnostics has the details.</string>
+
+    <!-- Drive tab -->
+    <string name="checking_phone">Checking your phone…</string>
+    <string name="root_needed">Root needed to act as a USB drive</string>
+    <string name="cant_act_as_drive">This phone can\'t act as a USB drive yet</string>
+    <string name="open_diagnostics">Open Diagnostics in Tools</string>
+    <string name="without_root_title">Without root you can still:</string>
+    <string name="without_root_download">Download ISOs</string>
+    <string name="without_root_blank">Make a blank image</string>
+    <string name="computer_sees_it">The computer can see the drive now. To boot from it, restart the computer and pick “BootStik” in its boot menu.</string>
+    <string name="plug_in">Plug the phone into a computer with a USB cable.</string>
+    <string name="how_to_boot">How to boot</string>
+    <string name="ejected_by_computer">Ejected by the computer</string>
+    <string name="goes_back_in">It goes back in automatically the next time you plug into a computer.</string>
+    <string name="reinsert_now">Re-insert now</string>
+    <string name="ready">Ready</string>
+    <string name="ready_body">Tap an image below to mount it. The computer will see it as a USB drive or CD-ROM.</string>
+    <string name="auto_mount">Mount again after restart</string>
+    <string name="auto_mount_hint">When the phone starts, BootStick puts these images back.</string>
+    <string name="your_images">Your images</string>
+    <string name="tap_to_mount">Tap one to mount it</string>
+    <string name="free_space">%1$s free</string>
+    <string name="mount_a_file">Mount a file</string>
+    <string name="hide_other">Hide other files</string>
+    <string name="no_images">No images yet</string>
+    <string name="no_images_body">Download an ISO, or copy one to the phone. Every .iso and .img file on the phone and SD card shows up here.</string>
+    <string name="more_options">More options for %1$s</string>
+    <string name="rename">Rename</string>
+    <string name="rename_hint">Keep the ending, such as .iso or .img.</string>
+    <string name="delete">Delete</string>
+    <string name="delete_title">Delete %1$s?</string>
+    <string name="delete_body">This removes the file (%1$s) from the phone. It can\'t be undone.</string>
+    <string name="deleted">Deleted %1$s</string>
+    <string name="unpack">Unpack</string>
+    <string name="unpack_title">Unpack %1$s?</string>
+    <string name="unpack_body">The image inside is saved next to it as %1$s. Large images take a few minutes.</string>
+    <string name="unpacked">Unpacked %1$s</string>
+    <string name="nothing_mounted_before">Nothing has been mounted yet.</string>
+
+    <!-- Mount sheet -->
+    <string name="sheet_how">How should the computer see it?</string>
+    <string name="suggested">Suggested</string>
+    <string name="last_used">Last used</string>
+    <string name="sheet_iso_readonly">ISO files are always mounted read-only, so the computer can\'t damage them. Only .img files can be writable.</string>
+    <string name="sheet_already">%1$s is already mounted</string>
+    <string name="sheet_replace">Replace it</string>
+    <string name="sheet_replace_hint">The computer sees only this image.</string>
+    <string name="sheet_add">Add as another drive</string>
+    <string name="sheet_add_hint">The computer sees both, for example an ISO and a save disk.</string>
+    <string name="sheet_reconnect">USB reconnects for a moment while mounting, so ADB or file transfer drops briefly.</string>
+    <string name="sheet_change_mode">Change mode</string>
+    <string name="sheet_add_button">Add drive</string>
+
+    <!-- Busy and results -->
+    <string name="busy_mounting">Mounting %1$s…</string>
+    <string name="busy_ejecting">Ejecting…</string>
+    <string name="busy_finding">Finding the latest %1$s…</string>
+    <string name="busy_finding_file">Finding the file…</string>
+    <string name="busy_reading">Reading the file…</string>
+    <string name="busy_deleting">Deleting %1$s…</string>
+    <string name="busy_renaming">Renaming %1$s…</string>
+    <string name="busy_unpacking">Unpacking %1$s… %2$s</string>
+    <string name="busy_creating">Creating a %1$s image…</string>
+    <string name="ready_one">%1$s is ready. Plug the phone into a computer.</string>
+    <string name="ready_many">%1$d drives are ready. Plug the phone into a computer.</string>
+    <string name="downloading">Downloading %1$s</string>
+    <string name="err_storage_permission">Allow storage access so the download can be saved, then try again.</string>
+    <string name="err_find_latest">Couldn\'t find the latest %1$s: %2$s</string>
+    <string name="err_no_path">%1$s isn\'t a file on this phone\'s storage (it may be in the cloud). Copy it to the phone first, then mount it.</string>
+    <string name="err_read">Couldn\'t read %1$s: %2$s</string>
+    <string name="err_unpack">Couldn\'t unpack it: %1$s</string>
+    <string name="err_no_space_image">There isn\'t enough free space for a %1$s image.</string>
+
+    <!-- Notifications, tile, shortcuts -->
+    <string name="channel_mounted">Mounted image</string>
+    <string name="channel_downloads">Downloads</string>
+    <string name="notif_mounted">Mounted: %1$s</string>
+    <string name="notif_ejected">Ejected by the computer: %1$s</string>
+    <string name="notif_ejected_body">Plug into a computer to re-insert it</string>
+    <string name="tile_label">BootStick</string>
+    <string name="tile_nothing">Nothing to mount yet</string>
+    <string name="tile_mounted">Mounted. Plug the phone into a computer.</string>
+    <string name="shortcut_mount_last">Mount last image</string>
+    <string name="shortcut_mount_last_long">Mount what was mounted last time</string>
+    <string name="shortcut_eject">Eject</string>
+    <string name="shortcut_eject_long">Eject the mounted images</string>
+
+    <!-- Get ISOs tab -->
+    <string name="your_downloads">Your downloads</string>
+    <string name="your_downloads_hint">Pause any time. Downloads pick up where they stopped, even after closing the app.</string>
+    <string name="catalog_title">Open-source systems</string>
+    <string name="catalog_hint">%1$d free images, always the newest release. Saved to Download/BootStick. No root needed.</string>
+    <string name="catalog_hint_sd">%1$d free images, always the newest release. Saved to the SD card. No root needed.</string>
+    <string name="search_hint">Search, for example Mint, server or rescue</string>
+    <string name="nothing_matches">Nothing matches. Try another word, or paste a link below.</string>
+    <string name="from_link">Download from a link</string>
+    <string name="must_be_https">Must start with https://</string>
+    <string name="download">Download</string>
+    <string name="download_x">Download %1$s</string>
+    <string name="download_settings">Download settings</string>
+    <string name="wifi_only">Only on Wi-Fi</string>
+    <string name="wifi_only_hint">Downloads wait for Wi-Fi instead of using mobile data.</string>
+    <string name="save_to_sd">Save to the SD card</string>
+    <string name="save_to_sd_hint">Into BootStick\'s folder on the card. Android deletes that folder if you uninstall BootStick.</string>
+    <string name="group_desktop">Desktop</string>
+    <string name="group_server">Server</string>
+    <string name="group_lightweight">Lightweight</string>
+    <string name="group_rescue">Rescue &amp; tools</string>
+    <string name="group_security">Security &amp; privacy</string>
+    <string name="group_bsd">BSD &amp; more</string>
+    <string name="remove_from_list">Remove from list (keeps the file)</string>
+    <string name="cancel_and_delete">Cancel and delete</string>
+    <string name="cancel_download_title">Cancel this download?</string>
+    <string name="cancel_download_body">%1$s and the part downloaded so far (%2$s) will be deleted.</string>
+    <string name="keep_downloading">Keep downloading</string>
+    <string name="already_downloaded">%1$s is already in your downloads.</string>
+    <string name="download_again">Download again</string>
+    <string name="dl_starting">Starting…</string>
+    <string name="dl_paused_at">Paused at %1$d%% · %2$s</string>
+    <string name="dl_stopped_at">Stopped at %1$d%%</string>
+    <string name="dl_finishing">Downloaded, finishing up…</string>
+    <string name="dl_downloaded">Downloaded · %1$s</string>
+    <string name="dl_check_ok">Matches its published %1$s checksum.</string>
+    <string name="dl_check_bad">Doesn\'t match its published checksum, so the file is damaged. Download it again.</string>
+    <string name="dl_check_none">No published checksum found. Check it by hand in Tools if you have one.</string>
+    <string name="eta_under_minute">under a minute left</string>
+    <string name="eta_minutes">%1$d min left</string>
+    <string name="eta_hours">%1$d h %2$d min left</string>
+    <string name="dl_waiting_turn">Waiting for another download to finish</string>
+    <string name="dl_waiting_wifi">Waiting for Wi-Fi</string>
+    <string name="dl_retrying">%1$s. Retrying (%2$d of %3$d)…</string>
+    <string name="dl_restarted">The file changed on the server, so the download started over</string>
+    <string name="dl_no_space_detail">Not enough free space: it needs %1$s and %2$s is free</string>
+    <string name="dl_no_space">Not enough free space</string>
+    <string name="dl_link_outdated">The server answered %1$d. The link may be out of date</string>
+    <string name="dl_server_answered">The server answered %1$d</string>
+    <string name="dl_no_resume">The server stopped allowing resumed downloads (%1$d)</string>
+    <string name="dl_closed_early">The connection closed early</string>
+    <string name="dl_cant_save">Couldn\'t save %1$s</string>
+    <string name="dl_finding_checksum">Looking for its published checksum…</string>
+    <string name="dl_verifying">Checking %1$s… %2$d%%</string>
+    <string name="dl_unpacking">Unpacking… %1$s</string>
+    <string name="dl_unpack_failed">Downloaded, but couldn\'t unpack it: %1$s</string>
+    <string name="dl_no_internet">No internet connection</string>
+    <string name="dl_timed_out">The connection timed out</string>
+    <string name="dl_notif_one">Downloading %1$s</string>
+    <string name="dl_notif_progress">%1$d%% · %2$s/s</string>
+    <string name="dl_done_title">Downloaded %1$s</string>
+    <string name="dl_done_body">Open BootStick to mount it</string>
+    <string name="dl_done_verified">Checksum verified. Open BootStick to mount it</string>
+    <string name="dl_done_bad">The checksum doesn\'t match. Download it again</string>
+
+    <!-- Tools tab -->
+    <string name="check_title">Check an image</string>
+    <string name="check_hint">Find out what kind of image a file is and how to mount it, verify its checksum, and unpack compressed images. No root needed.</string>
+    <string name="choose_file">Choose a file</string>
+    <string name="choose_another">Choose another file</string>
+    <string name="mount_it_as">Mount it as: %1$s</string>
+    <string name="paste_checksum">Published checksum (optional)</string>
+    <string name="paste_checksum_hint">MD5, SHA-1, SHA-256 or SHA-512, told apart by length</string>
+    <string name="compute">Compute %1$s</string>
+    <string name="computing_n">Computing the checksum… %1$s</string>
+    <string name="unpacking_n">Unpacking… %1$s</string>
+    <string name="checksum_match">It matches. The file is complete and unchanged.</string>
+    <string name="checksum_mismatch">It doesn\'t match. The file is damaged or a different version, so download it again.</string>
+    <string name="blank_title">New blank image</string>
+    <string name="blank_hint">An empty disk, for example a save disk for Tiny Core or a scratch drive. Mount it as a writable USB disk. No root needed.</string>
+    <string name="file_name">File name</string>
+    <string name="size">Size</string>
+    <string name="unit_bytes">Bytes</string>
+    <string name="unit_mb">MB</string>
+    <string name="unit_gb">GB</string>
+    <string name="size_result">%1$s (%2$s bytes)</string>
+    <string name="size_rounded">Rounded up to %1$s bytes, a whole number of 512-byte sectors</string>
+    <string name="size_invalid">Enter a size above zero and up to %1$s</string>
+    <string name="format_fat32">Format as FAT32</string>
+    <string name="format_fat32_hint">Ready to use on Windows, macOS and Linux, with no formatting on the computer.</string>
+    <string name="format_fat32_small">FAT32 needs at least %1$s.</string>
+    <string name="choose_where">Choose where to save</string>
+    <string name="created">Created. Mount it as a writable USB disk, then format it from the computer.</string>
+    <string name="created_fat32">Created and formatted. Mount it as a writable USB disk.</string>
+    <string name="boot_title">How to boot a computer from your phone</string>
+    <string name="boot_hint">Boot menu keys for common brands, and what to try if it doesn\'t start.</string>
+    <string name="boot_step1">1. Mount an image in the Drive tab and plug the phone into the computer.</string>
+    <string name="boot_step2">2. Restart the computer and keep pressing its boot menu key as it starts:</string>
+    <string name="boot_step3">3. Pick “BootStik” followed by the image name. Some menus just say USB or UEFI: USB.</string>
+    <string name="key_hp">Esc, then F9</string>
+    <string name="key_asus">F8 or Esc</string>
+    <string name="key_mac">Hold Option</string>
+    <string name="boot_trouble">If it doesn\'t show up or won\'t start:</string>
+    <string name="boot_tip_windows">• Windows ISOs only boot as a CD-ROM. Most Linux ISOs work as a read-only USB disk.</string>
+    <string name="boot_tip_secure">• Some ISOs need Secure Boot switched off in the computer\'s firmware settings.</string>
+    <string name="boot_tip_cable">• Plug straight into the computer rather than through a hub, and use a cable that carries data.</string>
+    <string name="boot_tip_mac">• Apple silicon Macs can\'t boot from these images.</string>
+    <string name="show_steps">Show the steps</string>
+    <string name="show_less">Show less</string>
+    <string name="diagnostics">Diagnostics</string>
+    <string name="diagnostics_hint">A report of this phone\'s USB setup to share when something doesn\'t work.</string>
+    <string name="needs_root">Needs root.</string>
+    <string name="collecting">Collecting…</string>
+    <string name="share_report">Share report</string>
+    <string name="intro_again">Show the introduction again</string>
+    <string name="intro_again_hint">The welcome screens and the root check.</string>
+    <string name="about_hint">What you need, which phones work, and who made it.</string>
+
+    <!-- About -->
+    <string name="version">Version %1$s</string>
+    <string name="about_tagline">Your phone, as a USB drive. Boot a computer from an ISO stored on your phone, with no USB stick needed.</string>
+    <string name="app_page">App page</string>
+    <string name="share_app">Share BootStick</string>
+    <string name="share_text">BootStick turns a rooted Android phone into a bootable USB drive: %1$s</string>
+    <string name="what_you_need">What you need</string>
+    <string name="need_android">Android 8 or newer</string>
+    <string name="need_android_detail">This phone runs Android %1$s.</string>
+    <string name="need_root">Root, for mounting</string>
+    <string name="need_root_no">Not granted yet. Use KernelSU, KernelSU Next, Magisk or APatch.</string>
+    <string name="need_root_yes">Granted.</string>
+    <string name="need_root_through">Granted through %1$s.</string>
+    <string name="need_kernel">USB mass storage in the kernel</string>
+    <string name="need_kernel_yes">Found. This phone can act as a USB drive.</string>
+    <string name="need_kernel_later">Checked once root is granted. Most phone kernels have it.</string>
+    <string name="need_cable">A USB cable that carries data</string>
+    <string name="need_cable_detail">Charge-only cables power the phone, but the computer never sees the drive.</string>
+    <string name="need_computer">A computer that can boot from USB</string>
+    <string name="need_computer_detail">Most PCs, and Intel Macs. Apple silicon Macs can\'t boot from these images.</string>
+    <string name="which_phones">Which phones work</string>
+    <string name="which_phones_body">Brand matters less than three things: Android 8 or newer, root, and a kernel built with USB mass storage. That covers most phones from 2018 on, from Motorola, Samsung, Xiaomi, OnePlus and others. Some kernels leave mass storage out, and BootStick tells you if yours is one of them.</string>
+    <string name="tested_on">Tested on</string>
+    <string name="tested_on_detail">Motorola ThinkPhone 2023: Android 14, GKI 5.10 kernel, KernelSU Next, connected to a Mac.</string>
+    <string name="wont_work">Won\'t work</string>
+    <string name="wont_work_detail">Android 7 and older, phones without root, and kernels without USB mass storage. Downloads, image checks and blank images still work on these.</string>
+    <string name="tried_another">Tried it on another phone? Send the report from Tools → Diagnostics so it can be added to this list.</string>
+    <string name="send_feedback">Send feedback</string>
+    <string name="feedback_subject">BootStick feedback</string>
+    <string name="no_email_app">No email app found. Write to %1$s.</string>
+    <string name="made_by">Made by</string>
+    <string name="author_role">Full-Stack AI Engineer · Islamabad, Pakistan</string>
+    <string name="origin">BootStick started as a fix for DriveDroid not mounting anything on a Motorola ThinkPhone, and grew into a full app.</string>
+    <string name="portfolio">Portfolio</string>
+    <string name="email">Email</string>
+
+    <!-- Onboarding -->
+    <string name="get_started">Get started</string>
+    <string name="welcome_title">Your phone, as a USB drive</string>
+    <string name="welcome_body">Boot a computer from an ISO stored on your phone, with no USB stick needed. Install Linux or Windows, run a live system, or carry a writable disk around.</string>
+    <string name="welcome_point1">Linux and Windows ISOs, as a USB disk or a CD-ROM</string>
+    <string name="welcome_point2">Writable disk images, made right on the phone</string>
+    <string name="welcome_point3">Works with KernelSU, KernelSU Next, Magisk and APatch</string>
+    <string name="how_it_works">How it works</string>
+    <string name="step1_title">Get an image</string>
+    <string name="step1_body">Download one in Get ISOs, or copy any .iso or .img file to the phone.</string>
+    <string name="step2_title">Mount it</string>
+    <string name="step2_body">Tap it and choose how the computer should see it. BootStick suggests the right mode for each file.</string>
+    <string name="step3_title">Plug in and boot</string>
+    <string name="step3_body">Connect the phone with a USB cable. To boot from it, open the computer\'s boot menu (often F12, F11 or Esc) and pick “BootStik”.</string>
+    <string name="checking_root">Checking for root…</string>
+    <string name="all_set">You\'re all set</string>
+    <string name="all_set_body">Root works and this phone can act as a USB drive.</string>
+    <string name="root_but_no_drive">Root works, but this phone can\'t act as a USB drive yet</string>
+    <string name="give_root">Give BootStick root</string>
+    <string name="give_root_body">BootStick uses root to switch the phone\'s USB port into drive mode.</string>
+    <string name="without_it">Without it you can still:</string>
+    <string name="without_it_1">Download ISOs from the built-in list or any link</string>
+    <string name="without_it_2">Check what an image is and verify its checksum</string>
+    <string name="without_it_3">Make blank disk images</string>
+
+    <plurals name="drives">
+        <item quantity="one">%1$d drive</item>
+        <item quantity="other">%1$d drives</item>
+    </plurals>
+    <plurals name="show_other">
+        <item quantity="one">Show %1$d other file (phone firmware and unknown images)</item>
+        <item quantity="other">Show %1$d other files (phone firmware and unknown images)</item>
+    </plurals>
+    <plurals name="dl_notif_many">
+        <item quantity="one">Downloading %1$d file</item>
+        <item quantity="other">Downloading %1$d files</item>
+    </plurals>
+</resources>

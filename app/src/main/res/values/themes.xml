@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Only the window behind Compose: the launch background (and the Android 12+ system splash) in brand colors. -->
+    <style name="Theme.BootStick" parent="android:Theme.Material.Light.NoActionBar">
+        <item name="android:windowBackground">@color/brand_background</item>
+    </style>
+    <color name="brand_background">#FFF4F7FA</color>
+</resources>

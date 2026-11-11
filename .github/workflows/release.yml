@@ -1,0 +1,55 @@
+# Push a tag like v1.0 (matching versionName in app/build.gradle.kts) to publish a signed APK as a GitHub Release.
+# Needs the secrets BS_KEYSTORE_BASE64, BS_KEYSTORE_PASSWORD, BS_KEY_ALIAS and BS_KEY_PASSWORD (see CONTRIBUTING.md).
+name: Release
+
+on:
+  push:
+    tags: ['v*']
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-java@v6
+        with:
+          distribution: temurin
+          java-version: 26
+      - uses: android-actions/setup-android@v4
+        with:
+          packages: platforms;android-37.0
+      - uses: gradle/actions/setup-gradle@v6
+
+      - name: Tag must match versionName
+        run: |
+          version=$(sed -n 's/.*versionName = "\(.*\)".*/\1/p' app/build.gradle.kts)
+          [ "$GITHUB_REF_NAME" = "v$version" ] || { echo "::error::Tag $GITHUB_REF_NAME doesn't match versionName $version"; exit 1; }
+
+      - name: Test
+        run: sh test-kind.sh && ./gradlew testDebugUnitTest
+
+      - name: Build signed APK
+        env:
+          BS_KEYSTORE_BASE64: ${{ secrets.BS_KEYSTORE_BASE64 }}
+          BS_KEYSTORE_PASSWORD: ${{ secrets.BS_KEYSTORE_PASSWORD }}
+          BS_KEY_ALIAS: ${{ secrets.BS_KEY_ALIAS }}
+          BS_KEY_PASSWORD: ${{ secrets.BS_KEY_PASSWORD }}
+        run: |
+          [ -n "$BS_KEYSTORE_BASE64" ] || { echo "::error::Signing secrets are not set"; exit 1; }
+          export BS_KEYSTORE="$RUNNER_TEMP/release.jks"
+          echo "$BS_KEYSTORE_BASE64" | base64 -d > "$BS_KEYSTORE"
+          ./gradlew assembleRelease
+          apk="BootStick-$GITHUB_REF_NAME.apk"
+          mv app/build/outputs/apk/release/app-release.apk "$apk"
+          sha256sum "$apk" > "$apk.sha256"
+          rm "$BS_KEYSTORE"
+
+      - name: Publish release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "$GITHUB_REF_NAME" BootStick-*.apk BootStick-*.apk.sha256 \
+            --title "BootStick $GITHUB_REF_NAME" --generate-notes

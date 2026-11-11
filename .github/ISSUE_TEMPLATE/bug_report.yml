@@ -1,0 +1,38 @@
+name: Bug report
+description: Something doesn't work, or the computer doesn't see the drive.
+labels: [bug]
+body:
+  - type: input
+    id: phone
+    attributes:
+      label: Phone model
+      placeholder: Motorola ThinkPhone 2023
+    validations:
+      required: true
+  - type: input
+    id: android
+    attributes:
+      label: Android version
+      placeholder: "14"
+    validations:
+      required: true
+  - type: dropdown
+    id: root
+    attributes:
+      label: Root manager
+      options: [KernelSU, KernelSU Next, Magisk, APatch, Not rooted, Other]
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: What you did, what you expected, and what happened instead. Include the image name and the mode (read-only disk, CD-ROM, writable disk) if it's about mounting.
+    validations:
+      required: true
+  - type: textarea
+    id: diag
+    attributes:
+      label: Diagnostics report
+      description: In the app, open Tools → Diagnostics → Copy, and paste it here. Needs root; skip it if you don't have root.
+      render: text

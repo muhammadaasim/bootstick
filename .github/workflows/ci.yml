@@ -1,0 +1,30 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-java@v6
+        with:
+          distribution: temurin
+          java-version: 26
+      - uses: android-actions/setup-android@v4
+        with:
+          packages: platforms;android-37.0
+      - uses: gradle/actions/setup-gradle@v6
+
+      - name: Shell self-check (bootstick.sh kind and path rules)
+        run: sh test-kind.sh
+      - name: Unit tests and debug build
+        run: ./gradlew testDebugUnitTest assembleDebug
+
+      - uses: actions/upload-artifact@v7
+        with:
+          name: BootStick-debug
+          path: app/build/outputs/apk/debug/app-debug.apk
